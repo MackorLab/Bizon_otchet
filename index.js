@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 80
 
 //const url_1 = 'https://skyauto.me/cllbck/181604360/751207/YjZXd05WdDlkY1F5ZTQzNk03dHpkUT0?avtp=1&player[param][path]=';
 
-var request = require('request');
+
 var numbers = "";
 var telos = "";
 var answer = '';
@@ -63,7 +63,9 @@ app.listen(PORT, () => {
 
 
 app.post("/5000", function (req, res) {
-  res.send("200");
+  
+  console.log(req.body.host)
+
   let hosts = req.body.host;
   let ports = req.body.port;
   let secures =  req.body.secure;
@@ -90,14 +92,18 @@ app.post("/5000", function (req, res) {
     from: users,
     to: tos,
     subject: subjects,
-    html: htmls
+    text: htmls
     };
     
     transporter.sendMail(mailOptions, function(error, info){
     if (error) {
       console.log(error);
+      res.send(error);
+
     } else {
       console.log('Email sent: ' + info.response);
+      res.send(info.response);
+
     }
     });
  
