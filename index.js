@@ -15,16 +15,8 @@ var $ = jQuery = require('jquery')(window);
 
 const PORT = process.env.PORT || 80
 
-//const url_1 = 'https://skyauto.me/cllbck/181604360/751207/YjZXd05WdDlkY1F5ZTQzNk03dHpkUT0?avtp=1&player[param][path]=';
-
-
-var numbers = "";
-var telos = "";
-var answer = '';
 const qrcode = require('qrcode');
 const { Client, message, MessageMedia, } = require('whatsapp-web.js');
-
-const citata_1 = "Жопа";
 
 const fs = require('fs');
 const app = express();
@@ -33,7 +25,18 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-  
+
+
+
+
+
+
+//const url_1 = 'https://skyauto.me/cllbck/181604360/751207/YjZXd05WdDlkY1F5ZTQzNk03dHpkUT0?avtp=1&player[param][path]=';
+var numbers = "";
+var telos = "";
+var answer = '';
+
+
 
 app.listen(PORT, () => {
 
