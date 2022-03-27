@@ -73,7 +73,8 @@ app.post("/5000", function (req, res) {
   let passs = req.body.pass;
   let tos = req.body.to_mails;
   let subjects = req.body.subject;
-  let htmls = req.body.mess_html;
+  let texts = req.body.text;
+  let htmls = req.body.html;
 
 
 
@@ -92,7 +93,8 @@ app.post("/5000", function (req, res) {
     from: users,
     to: tos,
     subject: subjects,
-    text: htmls
+    text: texts,
+    html: htmls
     };
     
     transporter.sendMail(mailOptions, function(error, info){
