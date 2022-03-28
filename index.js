@@ -31,11 +31,6 @@ app.use(bodyParser.json());
 
 
 
-//const url_1 = 'https://skyauto.me/cllbck/181604360/751207/YjZXd05WdDlkY1F5ZTQzNk03dHpkUT0?avtp=1&player[param][path]=';
-var numbers = "";
-var telos = "";
-var answer = '';
-
 
 
 app.listen(PORT, () => {
@@ -113,10 +108,6 @@ app.post("/5000", function (req, res) {
     });
  
 
-
-
-
- 
   });
 
 
@@ -143,23 +134,7 @@ app.post("/5000", function (req, res) {
   var repp4;
   var repp5;
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+ 
   app.get('/pod', function(req, res) {
     var token = req.query.tokes;
     var weben = req.query.webens;
@@ -172,8 +147,6 @@ app.post("/5000", function (req, res) {
     .get(webid)
     .headers({"X-Token": token})
   
-    
-   
     .then((response) => {
   
       rep1 = response.body;
@@ -181,24 +154,14 @@ app.post("/5000", function (req, res) {
       rep3 = rep2.report;
       rep4 = JSON.parse(rep3);
   
-  
-     
-    
-     // console.log(rep4);
-      
-  
           $.each(rep4,function(key,data1) {
-           
-           
-            
+          
             rep5 = data1;
            
           });
   
           $.each(rep5,function(key,data2) {
            
-            
-  
             fruits.push(data2);
             rep6 = data2;
             
@@ -206,10 +169,6 @@ app.post("/5000", function (req, res) {
           res.send(fruits);
           //console.log(fruits);
     })
-  
-   
-  
-    
   
   });
   
@@ -225,10 +184,6 @@ app.post("/5000", function (req, res) {
   
   
   app.get('/test', function(req, res) {
-  
-  
-  
-  
   
     var token = req.query.tokes;
     console.log(token);
@@ -258,53 +213,6 @@ app.post("/5000", function (req, res) {
   
   
   
-  
-    app.post("/fghj332", function (req, res) {
-      res.send("200");
-      let hosts = req.body.host;
-      let ports = req.body.port;
-      let secures =  req.body.secure;
-      let users = req.body.user;
-      let passs = req.body.pass;
-      let tos = req.body.to_mails;
-      let subjects = req.body.subject;
-      let htmls = req.body.mess_html;
-  
-    
-  
-      let transporter = nodemailer.createTransport(
-        {
-          host: hosts,
-          port: ports,
-          secure: secures, // true for 465, false for other ports
-          auth: {
-            user: users,
-            pass: passs
-          }
-        });
-        
-      let mailOptions = {
-        from: users,
-        to: tos,
-        subject: subjects,
-        html: htmls
-        };
-        
-        transporter.sendMail(mailOptions, function(error, info){
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Email sent: ' + info.response);
-        }
-        });
-     
-  
-  
-  
-  
-     
-      });
-
 
 
 
