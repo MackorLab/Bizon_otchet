@@ -45,6 +45,11 @@ app.listen(PORT, () => {
 
 
   app.get('/', function(req, res) {
+
+console.log("fruits");
+
+
+    
     res.sendFile(__dirname + '/index.html');
   });
   
