@@ -185,26 +185,8 @@ app.post("/5000", function (req, res) {
   
   app.get('/test', function(req, res) {
   
-    var token = req.query.tokes;
-    console.log(token);
-  
-    unirest
-      .get('https://online.bizon365.ru/api/v1/webinars/reports/getlist')
-      .headers({'X-Token':token})
-      .send({ "parameter": 3, "foo": "bar" })
-      .then((response) => {
-    
-    
-        let json = JSON.stringify(response.body);
-        repp1 = response.body;
-        repp2 = repp1.list;
-        res.send(repp2);
-    
-        //console.log(response.body);
-        //console.log(repp2);
-      })
-    
-     
+
+     console.log("Прошло");
     });  
     
   
