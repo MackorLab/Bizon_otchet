@@ -184,9 +184,6 @@ app.post("/5000", function (req, res) {
   
   
   app.get('/test666', function(req, res) {
-  
-
-     console.log("Прошло");
 
 res.sendFile(__dirname + '/index.html');
     
